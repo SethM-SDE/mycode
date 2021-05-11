@@ -7,7 +7,7 @@ int_roll = int(roll)
 
 if int_roll == 20:
 	print('Critical hit! The goblin is vanquished!')
-elif 15 <= int_roll <= 19:
+elif 15 <= int_roll <= 19 or int_roll > 20:
 	print('You hit the goblin, it looks angry...')
 elif 2<= int_roll < 15:
 	print('You missed the goblin. You call yourself an adventurer...')
