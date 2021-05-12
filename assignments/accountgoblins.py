@@ -16,8 +16,8 @@ def three_number(num1,num2,num3):
     return two_number(num1, num2) + num3
 
 
-# main function
-def main():
+# function for part one of challenge
+def part_one():
     # part one: 2 numbers sum to goal
     print(f'Part 1: Two numbers sum to {goal}')
     for num1 in numbers:
@@ -36,10 +36,8 @@ def main():
             continue
         break
 
-    # scenario separator
-    print('\n-----\n'
-            
-            )
+# function for part two of challenge
+def part_two():
     # part 2: three numbers sum to goal
     print(f'Part 2: Three numbers sum to {goal}')
     for num1 in numbers:
@@ -62,5 +60,13 @@ def main():
         else:
             continue
         break
-# call the main function to start script
+
+# define main function
+def main():
+    part_one()
+    # line separator to clearly separate part one and two answers
+    print('\n-----\n')
+    part_two()
+
+# call main function
 main()
