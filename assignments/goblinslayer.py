@@ -67,5 +67,5 @@ while goblin_HP > 0:
         print('The goblin is injured! Keep at it!')
     elif 1 <= goblin_HP < 4:
         print('The goblin is looking rough...')
-    elif gobl:in_HP <= 0:
+    elif goblin_HP <= 0:
         print('The goblin is vanquished! HUZZAH!')
