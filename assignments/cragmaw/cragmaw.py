@@ -2,7 +2,7 @@
 import dice
 import random
 import sys
-from mycode.assignments.cragmaw.cragmaw import Player
+from player import Player
 
 
 # Replace RPG starter project with this code when new instructions are live
