@@ -22,10 +22,10 @@ Commands:
 player = Player()
 
 # create a dictionary of monsters!
-baddies = [{'name': 'goblin', 'health': 7, 'dmg': '1d4'},
+baddies = [{'name': 'Klarg the Bugbear', 'health': 21, 'dmg': '1d6'},
+           {'name': 'goblin', 'health': 7, 'dmg': '1d4'},
            {'name': 'kobold', 'health': 5, 'dmg': '1d4'},
-           {'name': 'goblin boss', 'health': 21, 'dmg': '1d6'},
-           {'name': 'hobgoblin', 'health': 11, 'dmg': '1d6'}]
+           {'name': 'wolf', 'health': 11, 'dmg': '1d4'}]
 
 
 def use_potion():
@@ -34,9 +34,16 @@ def use_potion():
 
 
 def random_combat():
-    mon_id = random.randint(0, (len(baddies) - 1))
+    # sets monster as Klarg if currentRoom is 'cave camp', otherwise random monster
+    if currentRoom == 'Cave Camp':
+        mon_id = 0
+    else:
+        mon_id = random.randint(1, (len(baddies) - 1))
     monster = baddies[mon_id]['name']
-    print(f'You are fighting a {monster}!')
+    if mon_id == 0:
+        print(f'You are fighting {monster}')
+    else:
+        print(f'You are fighting a {monster}!')
     monster_hp = baddies[mon_id]['health']
     round = 1
 
@@ -108,6 +115,7 @@ def showStatus():
         print('You see a ' + rooms[currentRoom]['item'])
     print("---------------------------")
 
+
 # A dictionary linking a room to other rooms
 rooms = {
 
@@ -124,7 +132,7 @@ rooms = {
         'combat_mod': 0,
         'desc': 'You are in a dark and dank cave. A shallow but swift river flows from the darkness to the north. To '
                 'the east there is a room where you hear growling. There is a steep, muddy slope to the west going '
-                'upward.',
+                'upward. The river flows southward out the cave exit',
         'fight': True,
     },
     'Kennel': {
@@ -141,7 +149,7 @@ rooms = {
         'east': 'Goblin Den',
         'item': 'potion',
         'combat_mod': 5,
-        'desc': 'The remnants of a camp lay onthe ground before you. A narrow hole leads downward into darkness along '
+        'desc': 'The remnants of a camp lay on the ground before you. A narrow hole leads downward into darkness along '
                 'the west floor. Down a set of wide steps you hear the babbling of a river, or maybe a spring? To the '
                 'east a passage slowly ramps upwards and turns out of sight.',
         'fight': True,
@@ -149,7 +157,7 @@ rooms = {
     'Cave Pond': {
         'steps': 'Cave Camp',
         'south': 'Cave River',
-        'item': 'sword',
+        'item' : 'potion',
         'combat_mod': 10,
         'desc': 'A natural spring flows from the cracks in the walls of this cave, flowing into a small pond. The '
                 'pond quickly flows outward to the south forming a swift river. Up a set of wide steps you see an '
@@ -159,7 +167,7 @@ rooms = {
     'Goblin Den': {
         'down': 'Cave River',
         'east': 'Cave Camp',
-        'item': 'potion',
+        'item': 'sword',
         'combat_mod': 5,
         'desc': 'You have entered what seems to be an active goblin den! Thankfully the goblins are gone at the '
                 'moment!  Eastward you see a dark path curving out of sight. There is a slippery slope heading '
