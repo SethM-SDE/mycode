@@ -146,7 +146,7 @@ rooms = {
     'Cave Camp': {
         'down': 'Kennel',
         'steps': 'Cave Pond',
-        'eset': 'Goblin Den',
+        'west': 'Goblin Den',
         'item': 'potion',
         'combat_mod': 5,
         'desc': 'The remnants of a camp lay on the ground before you. A narrow hole leads downward into darkness along '
