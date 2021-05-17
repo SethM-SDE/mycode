@@ -176,7 +176,7 @@ rooms = {
     }
 }
 
-# start the player in the Hall
+# start the player in the Glade
 currentRoom = 'Glade'
 
 showInstructions()
