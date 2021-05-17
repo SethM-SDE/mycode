@@ -146,12 +146,12 @@ rooms = {
     'Cave Camp': {
         'down': 'Kennel',
         'steps': 'Cave Pond',
-        'east': 'Goblin Den',
+        'west': 'Goblin Den',
         'item': 'potion',
         'combat_mod': 5,
         'desc': 'The remnants of a camp lay on the ground before you. A narrow hole leads downward into darkness along '
-                'the west floor. Down a set of wide steps you hear the babbling of a river, or maybe a spring? To the '
-                'east a passage slowly ramps upwards and turns out of sight.',
+                'the floor. Down a set of wide steps you hear the babbling of a river, or maybe a spring? To the '
+                'west a passage slowly ramps upwards and turns out of sight.',
         'fight': True,
     },
     'Cave Pond': {
@@ -176,7 +176,7 @@ rooms = {
     }
 }
 
-# start the player in the Hall
+# start the player in the Glade
 currentRoom = 'Glade'
 
 showInstructions()
