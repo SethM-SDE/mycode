@@ -66,16 +66,27 @@ def chuck_retriever():
 
 # main function definition
 def main():
-    # dictionary of methods that return quotes/jokes
-    quotes_dict = {0: dad_retriever(), 1: friends_retriever(), 2: chuck_retriever()}
-    # generate random index (0-2)
-    idx = random.randint(0,3)
-    # get tweet input from function based on idk variable
-    tweet_input = quotes_dict[idx]
-    # create new tweet with tweet input
-    new_tweet(tweet_input)
-    # print tweet_input for visual confirmation
-    print(tweet_input)
+    # length check variable to verify tweet is <= 280 characters
+    len_check = True
+    # loops while len_check is true
+    while len_check == True:
+        # dictionary of methods that return quotes/jokes
+        quotes_dict = {0: dad_retriever(), 1: friends_retriever(), 2: chuck_retriever()}
+        # generate random index (0-2)
+        idx = random.randint(0, 2)
+        # get tweet input from function based on idk variable
+        tweet_input = quotes_dict[idx]
+        # publish tweet if character output is <= 208 characters
+        if len(tweet_input) <= 280:
+            # create new tweet with tweet input (commented out until full publish)
+            # new_tweet(tweet_input)
+            # print tweet_input for visual confirmation
+            print(tweet_input)
+            # change len_check to false to break loop
+            len_check = False
+        else:
+            # while loop because tweet was too long
+            continue
 
 
 if __name__ == '__main__':
